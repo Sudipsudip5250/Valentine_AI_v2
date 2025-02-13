@@ -8,6 +8,10 @@ from nltk.stem import WordNetLemmatizer
 import nltk
 
 nltk.download('punkt')  # Add this to force download the missing tokenizer
+nltk.download('punkt_tab')  # 🔥 This line fixes the error!
+nltk.download('wordnet')  # For lemmatization
+nltk.download('stopwords')  # If using stopword removal
+
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
