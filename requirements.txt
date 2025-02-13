@@ -6,4 +6,3 @@ tensorflow
 nltk
 pickle-mixin
 gunicorn
-os
