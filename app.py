@@ -7,6 +7,8 @@ from keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 import nltk
 
+nltk.download('punkt')  # Add this to force download the missing tokenizer
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
