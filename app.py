@@ -18,7 +18,6 @@ CORS(app)  # Enable CORS for all routes
 
 # Load necessary files
 lemmatizer = WordNetLemmatizer()
-model = load_model("chatbot_model.h5")
 intents = json.loads(open("AI_brain2.json").read())
 words = pickle.load(open("words.pkl", "rb"))
 classes = pickle.load(open("classes.pkl", "rb"))
@@ -61,6 +60,7 @@ def getResponse(ints):
 @app.route("/chat", methods=["POST"])
 def chat():
     user_input = request.json.get("message")
+    model = load_model("chatbot_model.h5")
     intents = predict_class(user_input)
     response = getResponse(intents)
     return jsonify({"response": response})
